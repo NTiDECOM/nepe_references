@@ -1,2 +1,63 @@
 en:
-  hello: "Hello world"
+  resources:
+    search:
+      title: "References"
+  app:
+    name: "NEPE FEPB"
+  form:
+    bible_book:
+      name: "Name"
+      submit: "Save"
+    reference:
+      bible_book: "Bible Book"
+      chapter: "Chapter"
+      versicle: "Versicle"
+      keyword: "Keywords"
+      query_reference: "Query Reference"
+      submit: "Save"
+    search:
+      label: "Search for"
+      submit: "Search"
+  table:
+    bible_book:
+      name: "Bible Book"
+    reference:
+      bible_book_name: "Bible Book"
+      chapter_versicle: "Chapter:Versicle"
+      keyword: "Keywords"
+      query_reference: "Query Reference"
+  navbar:
+    login: "Login"
+    logout: "Logout"
+    edit_profile: "Edit Profile"
+    search: "Search"
+    bible_books: "Bible Books"
+    references: "Referencies"
+  button:
+    bible_book:
+      add: "Add"
+      edit: "Edit"
+      remove: "Remove"
+    reference:
+      add: "Add"
+      edit: "Edit"
+      remove: "Remove"
+  flash:
+    bible_book:
+      create_success: "Bible book successfuly added!"
+      update_success: "Bible book successfuly updated!"
+      delete_success: "Bible book successfuly removed!"
+      delete_error: "Error when try to remove bible book!"
+    reference:
+      create_success: "Reference successfuly added!"
+      update_success: "Reference successfuly updated!"
+      delete_success: "Reference successfuly removed!"
+      delete_error: "Error when try to remove Reference!"
+  alert:
+    warning:
+      search:
+        is_empty: "Nothing found"
+    bible_book:
+      remove: "You want to remove this bible book?"
+    reference:
+      remove: "You want to remove this reference?"
