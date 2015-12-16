@@ -1,6 +1,6 @@
 <div class="row">
   <div class="large-12">
-    <%= link_to "Adicionar", new_reference_path, class: "button right" %>
+    <%= link_to t('button.reference.add'), new_reference_path, class: "button right" %>
   </div>
 </div>
 <div class="row">
@@ -8,10 +8,10 @@
     <table>
       <thead>
         <tr>
-          <th>Livro Bíblico</th>
-          <th>Capítulo:Versículo</th>
-          <th>Palavras Chave</th>
-          <th>Obras para Consulta</th>
+          <th><%= t('table.reference.bible_book_name') %></th>
+          <th><%= t('table.reference.chapter_versicle') %></th>
+          <th><%= t('table.reference.keyword') %></th>
+          <th><%= t('table.reference.query_reference') %></th>
           <th></th>
         </tr>
       </thead>
@@ -23,8 +23,8 @@
           <td><%= reference.keyword %></td>
           <td><%= reference.query_reference %></td>
           <td>
-            <%= link_to "Editar", edit_reference_path(reference), class: "button table-button tiny" %>
-            <%= link_to "Remover", reference,  method: :delete, data: { confirm: "Deseja remover esta referência?" }, class: "button table-button tiny alert" %>
+            <%= link_to t('button.reference.edit'), edit_reference_path(reference), class: "button table-button tiny" %>
+            <%= link_to t('button.reference.remove'), reference,  method: :delete, data: { confirm: t('alert.reference.remove') }, class: "button table-button tiny alert" %>
           </td>
         </tr>
         <% end %>

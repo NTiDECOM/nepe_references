@@ -1,37 +1,37 @@
 <%= form_for @reference do |f| %>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.label :bible_book %>
+      <%= f.label :bible_book, t('form.reference.bible_book') %>
       <%= select(:reference, :bible_book_id, @bible_books, {include_blank: true}) %>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.label :chapter %>
+      <%= f.label :chapter, t('form.reference.chapter') %>
       <%= f.text_field :chapter %>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.label :versicle %>
+      <%= f.label :versicle, t('form.reference.versicle') %>
       <%= f.text_field :versicle %>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.label :keyword %>
+      <%= f.label :keyword, t('form.reference.keyword') %>
       <%= f.text_field :keyword %>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.label :query_reference %>
+      <%= f.label :query_reference, t('form.reference.query_reference') %>
       <%= f.text_area :query_reference %>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.submit "Salvar", class: "button expand" %>
+      <%= f.submit t('form.reference.submit'), class: "button expand" %>
     </div>
   </div>
 <% end %>

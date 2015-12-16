@@ -19,7 +19,7 @@ class ReferencesController < ApplicationController
   def create
     @reference = Reference.new(reference_params)
     if @reference.save
-      redirect_to references_path, notice: "Referência salva com sucesso!"
+      redirect_to references_path, notice: t('flash.reference.create_success')
     else
       render action: :new
     end
@@ -28,7 +28,7 @@ class ReferencesController < ApplicationController
   def update
     @reference = Reference.find(params[:id])
     if @reference.update(reference_params)
-      redirect_to references_path, notice: "Referência atualizada com sucesso!"
+      redirect_to references_path, notice: t('flash.reference.update_success')
     else
       render action: :edit
     end
@@ -37,9 +37,9 @@ class ReferencesController < ApplicationController
   def destroy
     @reference = Reference.find(params[:id])
     if @reference.delete
-      redirect_to references_path, notice: "Referência removida com sucesso!"
+      redirect_to references_path, notice: t('flash.reference.delete_success')
     else
-      redirect_to references_path, alert: "Erro ao remover referência!"
+      redirect_to references_path, alert: t('flash.reference.delete_error')
     end
   end
 

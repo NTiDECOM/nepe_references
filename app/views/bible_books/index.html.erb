@@ -1,6 +1,6 @@
 <div class="row">
   <div class="large-8 large-offset-2">
-    <%= link_to "Adicionar", new_bible_book_path, class: "button right" %>
+    <%= link_to t('button.bible_book.add'), new_bible_book_path, class: "button right" %>
   </div>
 </div>
 <div class="row">
@@ -8,7 +8,7 @@
     <table>
       <thead>
         <tr>
-          <th>Livro Bíblico</th>
+          <th><%= t('table.bible_book.name') %></th>
           <th></th>
         </tr>
       </thead>
@@ -17,8 +17,8 @@
         <tr>
           <td><%= bible_book.name %></td>
           <td>
-            <%= link_to "Editar", edit_bible_book_path(bible_book), class: "button table-button tiny" %>
-            <%= link_to "Remover", bible_book,  method: :delete, data: { confirm: "Deseja remover este livro bíblico?" }, class: "button table-button tiny alert" %>
+            <%= link_to t('button.bible_book.edit'), edit_bible_book_path(bible_book), class: "button table-button tiny" %>
+            <%= link_to t('button.bible_book.remove'), bible_book,  method: :delete, data: { confirm: t('alert.bible_book.remove') }, class: "button table-button tiny alert" %>
           </td>
         </tr>
         <% end %>

@@ -1,11 +1,11 @@
 <div class="row">
   <div class="large-8 large-offset-2 columns">
-    <h1>Referências</h1>
+    <h1><%= t('resources.search.title') %></h1>
     <%= form_for search_path, method: :get do |f| %>
       <p>
-        <%= f.label "Busca por" %>
+        <%= f.label t('form.search.label') %>
         <%= text_field_tag :q, params[:q] %>
-        <%= submit_tag "Buscar", class: "button", name: nil %>
+        <%= submit_tag t('form.search.submit'), class: "button", name: nil %>
       </p>
     <% end %>
   </div>

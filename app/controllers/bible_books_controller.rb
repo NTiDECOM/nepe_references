@@ -15,7 +15,7 @@ class BibleBooksController < ApplicationController
   def create
     @bible_book = BibleBook.new(evangelist_params)
     if @bible_book.save
-      redirect_to bible_books_path, notice: "Livro bíblico cadastrado com sucesso!"
+      redirect_to bible_books_path, notice: t('flash.bible_book.create_success')
     else
       render action: :new
     end
@@ -24,7 +24,7 @@ class BibleBooksController < ApplicationController
   def update
     @bible_book = BibleBook.find(params[:id])
     if @bible_book.update(evangelist_params)
-      redirect_to bible_books_path, notice: "Livro bíblico atualizado com sucesso!"
+      redirect_to bible_books_path, notice: t('flash.bible_book.update_success')
     else
       render action: :edit
     end
@@ -33,9 +33,9 @@ class BibleBooksController < ApplicationController
   def destroy
     @bible_book = BibleBook.find(params[:id])
     if @bible_book.delete
-      redirect_to bible_books_path, notice: "Livro bíblico removido com sucesso!"
+      redirect_to bible_books_path, notice: t('flash.bible_book.delete_success')
     else
-      redirect_to bible_books_path, alert: "Erro ao remover o Livro bíblico!"
+      redirect_to bible_books_path, notice: t('flash.bible_book.delete_error')
     end
   end
 
