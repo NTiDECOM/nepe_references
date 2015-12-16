@@ -14,7 +14,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'foundation-rails'
 gem 'carrierwave'
-gem 'mailcatcher'
 gem 'foundation-icons-sass-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
@@ -24,6 +23,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'mailcatcher'
   gem 'byebug'
 end
 
