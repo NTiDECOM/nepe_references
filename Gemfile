@@ -17,8 +17,6 @@ gem 'carrierwave'
 gem 'foundation-icons-sass-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'unicorn'
-gem 'rack-timeout'
 
 group :production do
   gem 'rails_12factor'
