@@ -19,6 +19,10 @@ gem 'foundation-icons-sass-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug'
 end
