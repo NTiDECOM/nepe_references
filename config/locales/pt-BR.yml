@@ -54,6 +54,9 @@ pt-BR:
       delete_success: "Referência removida com sucesso!"
       delete_error: "Erro ao remover referência!"
   alert:
+    warning:
+      search:
+        is_empty: "Nenhum registro encontrado"
     bible_book:
       remove: "Deseja remover este livro bíblico?"
     reference:

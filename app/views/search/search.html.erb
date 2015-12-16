@@ -14,11 +14,19 @@
 <div class="row">
   <div class="large-8 large-offset-2 columns">
       <% if @references.any? %>
-      <% @references.records.each do |reference| %>
-        <p>
-            <%= reference.bible_book.name %> (<%= reference.chapter %>:<%= reference.versicle %>) - <i><%= reference.query_reference %></i>
-        </p>
+        <% @references.records.each do |reference| %>
+          <p>
+              <%= reference.bible_book.name %> (<%= reference.chapter %>:<%= reference.versicle %>) - <i><%= reference.query_reference %></i>
+          </p>
+        <% end %>
       <% end %>
+      <% if @searched %>
+        <% if @references.results.total == 0 %>
+          <div data-alert class="alert-box warning">
+            <%= t('alert.warning.search.is_empty') %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        <% end %>
       <% end %>
   </div>
 </div>
