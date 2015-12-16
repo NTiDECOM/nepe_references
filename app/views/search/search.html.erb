@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="large-8 large-offset-2 columns">
+    <h1>Referências</h1>
+    <%= form_for search_path, method: :get do |f| %>
+      <p>
+        <%= f.label "Busca por" %>
+        <%= text_field_tag :q, params[:q] %>
+        <%= submit_tag "Buscar", class: "button", name: nil %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-8 large-offset-2 columns">
+      <% if @references.any? %>
+      <% @references.records.each do |reference| %>
+        <p>
+            <%= reference.bible_book.name %> (<%= reference.chapter %>:<%= reference.versicle %>) - <i><%= reference.query_reference %></i>
+        </p>
+      <% end %>
+      <% end %>
+  </div>
+</div>

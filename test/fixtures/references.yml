@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chapter: MyString
+  versicle: MyString
+
+two:
+  chapter: MyString
+  versicle: MyString

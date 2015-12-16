@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="large-12 columns">
+    <%= link_to "Adicionar", new_registration_path(User.new), class: "button right" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-8 offset-large-2 columns">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Avatar</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= image_tag user.avatar, size: "50x50" %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= link_to "Editar", edit_user_path(user), class: "button table-button tiny" %>
+              <%= link_to "Remover", user,  method: :delete, data: { confirm: "Deseja remover esta usuário?" }, class: "button table-button tiny alert" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

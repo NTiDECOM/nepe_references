@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211213318) do
+ActiveRecord::Schema.define(version: 20151216020440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bible_books", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "references", force: :cascade do |t|
+    t.string   "chapter"
+    t.string   "versicle"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "bible_book_id"
+    t.string   "keyword"
+    t.string   "query_reference"
+  end
+
+  add_index "references", ["bible_book_id"], name: "index_references_on_bible_book_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -36,4 +54,5 @@ ActiveRecord::Schema.define(version: 20151211213318) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "references", "bible_books"
 end

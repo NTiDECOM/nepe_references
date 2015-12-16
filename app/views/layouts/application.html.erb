@@ -14,17 +14,22 @@
 
   <body>
 
-    <% if notice.present? %>
-    <div data-alert class="alert-box success">
-      <%= notice %>
-    </div>
-    <% end %>
+    <%= render 'layouts/navbar' %>
+    <div class="row">
+      <div class="large-12 columns">
+        <% if notice.present? %>
+        <div data-alert class="alert-box success">
+          <%= notice %>
+        </div>
+        <% end %>
 
-    <% if alert.present? %>
-    <div data-alert class="alert-box alert">
-      <%= alert %>
+        <% if alert.present? %>
+        <div data-alert class="alert-box alert">
+          <%= alert %>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
 
     <%= yield %>
 

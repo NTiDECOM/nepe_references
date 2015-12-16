@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="large-8 large-offset-2">
+    <%= link_to "Adicionar", new_bible_book_path, class: "button right" %>
+  </div>
+</div>
+<div class="row">
+  <div class="large-8 large-offset-2">
+    <table>
+      <thead>
+        <tr>
+          <th>Livro Bíblico</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bible_books.each do |bible_book| %>
+        <tr>
+          <td><%= bible_book.name %></td>
+          <td>
+            <%= link_to "Editar", edit_bible_book_path(bible_book), class: "button table-button tiny" %>
+            <%= link_to "Remover", bible_book,  method: :delete, data: { confirm: "Deseja remover este livro bíblico?" }, class: "button table-button tiny alert" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.3"
 
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
@@ -14,6 +15,9 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'carrierwave'
 gem 'mailcatcher'
+gem 'foundation-icons-sass-rails'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development, :test do
   gem 'byebug'

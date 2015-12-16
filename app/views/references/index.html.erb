@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="large-12">
+    <%= link_to "Adicionar", new_reference_path, class: "button right" %>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12">
+    <table>
+      <thead>
+        <tr>
+          <th>Livro Bíblico</th>
+          <th>Capítulo:Versículo</th>
+          <th>Palavras Chave</th>
+          <th>Obras para Consulta</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @references.each do |reference| %>
+        <tr>
+          <td><%= reference.bible_book.name %></td>
+          <td style="text-align: center;"><%= reference.chapter %>:<%= reference.versicle %></td>
+          <td><%= reference.keyword %></td>
+          <td><%= reference.query_reference %></td>
+          <td>
+            <%= link_to "Editar", edit_reference_path(reference), class: "button table-button tiny" %>
+            <%= link_to "Remover", reference,  method: :delete, data: { confirm: "Deseja remover esta referência?" }, class: "button table-button tiny alert" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
