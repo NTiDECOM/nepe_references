@@ -36,6 +36,7 @@
 
       <div class="field">
         <%= f.label :avatar %><br />
+        <%= image_tag(@user.avatar, size: "128x128") %>
         <%= f.file_field :avatar %>
       </div>
 
